@@ -30,7 +30,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
     let itemCount: Int
     var swipingToDismiss: SwipeToDismiss?
     fileprivate var isAnimating = false
-    fileprivate var fetchImageBlock: FetchImageBlock
+    public var fetchImageBlock: FetchImageBlock
 
     //CONFIGURATION
     fileprivate var presentationStyle = GalleryPresentationStyle.displacement
@@ -195,7 +195,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         fetchImage()
     }
 
-    public func fetchImage() {
+    open func fetchImage() {
 
         fetchImageBlock { [weak self] image in
 
